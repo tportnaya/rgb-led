@@ -1,0 +1,52 @@
+//Tatiana Portnaya
+int buttonPinR = 4;     // the number of the pushbutton pin for Red
+int buttonPinG = 5;     // the number of the pushbutton pin for Green
+int buttonPinB = 6;     // the number of the pushbutton pin for Blue
+const int RedPin =  7;      // the number of the red pinR
+const int GreenPin =  8;      // the number of the red pinG
+const int BluePin =  9;      // the number of the red pinB
+
+int buttonStateR = 0;         // variable for reading the pushbutton status
+int buttonStateG = 0;         // variable for reading the pushbutton status
+int buttonStateB  = 0;         // variable for reading the pushbutton status
+
+void setup() {
+  // initialize RGB pins as outputs pin as an output:
+  pinMode(RedPin, OUTPUT);
+  pinMode(GreenPin, OUTPUT);
+  pinMode(BluePin, OUTPUT);
+  // initialize the pushbuttons pins as inputs:
+  pinMode(buttonPinR, INPUT);
+  pinMode(buttonPinG, INPUT);
+  pinMode(buttonPinB, INPUT);
+}
+
+void loop() {
+  // read the state of the pushbutton value:
+  buttonStateR = digitalRead(buttonPinR);
+   buttonStateG = digitalRead(buttonPinG);
+    buttonStateB = digitalRead(buttonPinB);
+
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  if (buttonStateR == HIGH) {
+    // turn LED on:
+    digitalWrite(RedPin, HIGH);
+  } else {
+    // turn LED off:
+    digitalWrite(RedPin, LOW);
+  }
+  if (buttonStateG == HIGH) {
+    // turn LED on:
+    digitalWrite(GreenPin, HIGH);
+  } else {
+    // turn LED off:
+    digitalWrite(GreenPin, LOW);
+  }
+  if (buttonStateB == HIGH) {
+    // turn LED on:
+    digitalWrite(BluePin, HIGH);
+  } else {
+    // turn LED off:
+    digitalWrite(BluePin, LOW);
+  }
+}
